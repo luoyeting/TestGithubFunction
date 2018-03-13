@@ -1,0 +1,31 @@
+using UnityEngine;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+
+public class DelegateTest : MonoBehaviour {
+
+       // Use this for initialization
+       void Start () {
+              Action<int> act = this.TestCreateActionInstance();
+              act(10);
+              act(100);
+              act(1000);
+       }
+
+       private Action<int> TestCreateActionInstance()
+       {
+              int count = 0;
+              Action<int> action = delegate(int number) {
+                     count += number;
+                     Debug.Log(count);
+              };
+              action(1);
+              return action;
+       }
+
+       // Update is called once per frame
+       void Update () {
+
+       }
+}
