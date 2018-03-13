@@ -11,6 +11,7 @@ public class DelegateTest : MonoBehaviour {
               act(10);
               act(100);
               act(1000);
+              //分支下做的修改
        }
 
        private Action<int> TestCreateActionInstance()
